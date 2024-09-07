@@ -1,0 +1,451 @@
+/* Global Styles */
+* {
+    margin-left: 0.625rem;
+    margin-right: 0.625rem;
+    margin-top: 0.2rem;
+}
+
+body {
+    margin-top: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: rgb(165, 7, 7);
+    padding: 0.625rem 1.25rem;
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.4rem;
+}
+
+.logo img {
+    width: 3.2rem;
+}
+
+.logo-text {
+    color: #33b9b9f0;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.logo-subtext {
+    color: rgb(6, 15, 83);
+    margin-left: 0;
+    padding-left: 0;
+}
+
+/* Night Mode for Logo */
+body.night-mode .logo-text {
+    color: #ff0303;
+}
+
+body.night-mode .logo-subtext {
+    color: #ffffff;
+}
+
+/* Night Mode Button */
+.night-mode-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+/* resource Section */
+.resource {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    color: #000000;
+    background-color: rgb(255, 251, 251);
+}
+
+.resource-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.resource-item {
+    position: relative;
+    margin-bottom: 1.25rem;
+    padding: 1.25rem;
+    overflow: auto;
+    width: calc(50% - 1.25rem);
+    box-sizing: border-box;
+    background-size: cover;
+    justify-content: center;
+    border: #414d4c6d solid 0.04rem;
+}
+
+.resource-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(0.9px);
+    z-index: -1;
+}
+
+.toggle-button1 {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.25rem;
+    text-align: center;
+    margin-top: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.resource-item h3,
+.resource-item p {
+    position: relative;
+    z-index: 1;
+    color: rgb(10, 10, 10);
+    background-color: rgb(255, 255, 255);
+    font-size: 1.2rem;
+}
+
+.resource-item a {
+    text-decoration: none;
+}
+
+.resource-item img {
+    border: #0000004c solid 1px;
+}
+
+.resource-item .description {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    font-size: 0.9rem;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+}
+
+.resource-item:hover .description {
+    opacity: 1;
+    max-height: fit-content;
+    font-size: 0.9rem;
+}
+
+.resource-item:hover {
+    transform: translateY(-5px);
+}
+.question{
+    margin-top: 1.25rem;
+    display: flex;
+    text-align: left;
+}
+.qbbutton{
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+
+}
+.qbdisplay{
+    display: none;
+}
+.discipline-heading {
+    background-color: #ffffff6d;
+    color: white;
+    padding: 0.625rem;
+    cursor: pointer;
+    text-align: left;
+    border: none;
+    margin-bottom: 0.625rem;
+    font-size: 1rem;
+}
+
+.discipline {
+    background-color: #f1f1f1;
+    padding: 15px;
+    margin-bottom: 1.25rem;
+    display: none; /* Hide disciplines by default */
+}
+
+
+
+
+/* Animation for visibility toggle */
+.qbdisplay.show {
+    display: block;
+}
+
+.discipline.show {
+    display: block;
+}
+/* Animation */
+.animation {
+    display: inline-block;
+    overflow: hidden;
+    border-right: .15rem solid orange;
+    white-space: nowrap;
+    margin: 0 auto 1.875rem auto;
+    letter-spacing: 0.09rem;
+    animation: typing 4s steps(45, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 29ch;
+    }
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+/* Content */
+.content {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+/* Advanced Night Mode */
+body.night-mode {
+    background-color: #0f0f0f;
+    color: #fffbfb;
+}
+
+body.night-mode .header {
+    background-color: #000000;
+}
+
+body.night-mode .nav {
+    color: #fffcfc;
+    background-color: #0000008f;
+}
+
+body.night-mode .nav a {
+    color: #ffffff;
+}
+body.night-mode .toggle-button1 {
+    color: #ffffff;
+}
+body.night-mode .nav a:hover {
+    color: #33b9b9f0;
+}
+body.night-mode .resource {
+    background-color: #121212;
+    color: #f0f0f0;
+}
+
+body.night-mode .resource-item {
+    background-color: #1c1c1c;
+    border: #333333 solid 0.0625rem;
+}
+
+body.night-mode .resource-item h3,
+body.night-mode .resource-item p {
+    background-color: #1c1c1c;
+    color: #ffffff;
+}
+
+body.night-mode .resource-item:hover .description {
+    color: #cccccc;
+}
+body.night-mode .testimonial {
+    background-color: #131313;
+}
+
+body.night-mode .newsletter h3 {
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+
+body.night-mode .newsletter button {
+    background-color: #0f0f0f;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+body.night-mode .footer-bottom {
+    background-color: #0f0f0f;
+    color: #ffffff;
+}
+/* Night Mode for Questions and Buttons */
+body.night-mode .question {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.night-mode .qbbutton {
+    color: #ffffff;
+    font-size: 1.2em;
+}
+
+body.night-mode .qbdisplay {
+    background-color: #141418;
+}
+
+body.night-mode .discipline-heading {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+body.night-mode .discipline {
+    background-color: #242424;
+    color: #e0e0e0;
+}
+
+/* Footer */
+footer {
+    color: #000000;
+    padding: 1.25rem;
+    border-top: 0.0625rem solid rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-content h4 {
+    margin-bottom: 0.625rem;
+}
+
+.newsletter a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.newsletter button {
+    padding: 0.314rem 0.625rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1rem;
+    border-bottom: 0.01rem dotted black;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 1.25rem;
+    font-size: 0.8rem;
+}
+
+/* Navigation */
+.toggle-button {
+    display: none;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.nav a {
+    margin-left: 1.25rem;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: #33b9b9f0;
+}
+
+.nav a.active {
+    color: red;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    * {
+        margin-left: 0rem;
+        margin-right: 0rem;
+        margin-top: 0rem;
+    }
+    .resource-item h3 {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        word-wrap: break-word; /* Ensure long words break to the next line */
+        overflow: visible; /* Make sure there's no text clipping */
+        text-align: center; /* Optional: center the title for better appearance */
+    }
+    
+    .logo img {
+        display: none;
+    }
+
+    .Menu {
+        padding: 0.625rem;
+        text-align: right;
+        position: relative;
+    }
+
+    .toggle-button {
+        display: block;
+        background-color: transparent;
+        color: rgb(255, 35, 35);
+        border: none;
+        padding: 0.625rem;
+        cursor: pointer;
+        font-size: 1.2rem;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        background-color: #f0f0f0b3;
+        padding: 0.625rem;
+        border-radius: 0.4rem;
+        box-shadow: 0px 0.25rem 0.5rem rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top: 70%;
+        z-index: 1;
+        width: 50%;
+        right: 0;
+    }
+
+    .nav a {
+        margin-left: 0;
+        margin-bottom: 0.625rem;
+        color: rgb(0, 0, 0);
+        display: block;
+    }
+
+    .show-nav {
+        display: flex;
+    }
+}
